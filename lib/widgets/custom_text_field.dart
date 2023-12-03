@@ -9,17 +9,14 @@ class CustomTextField extends StatelessWidget {
   final int maxlines;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: TextField(
-        maxLines: maxlines,
-        cursorColor: kPrimaryColor,
-        decoration: InputDecoration(
-          hintText: hint,
-          hintStyle: const TextStyle(color: kPrimaryColor),
-          enabledBorder: buildBorder(),
-          focusedBorder: buildBorder(kPrimaryColor),
-        ),
+    return TextField(
+      maxLines: maxlines,
+      cursorColor: kPrimaryColor,
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(color: kPrimaryColor),
+        enabledBorder: buildBorder(),
+        focusedBorder: buildBorder(kPrimaryColor),
       ),
     );
   }

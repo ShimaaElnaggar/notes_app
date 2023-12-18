@@ -11,7 +11,7 @@ class ReadNoteCubit extends Cubit<ReadNoteStates>{
   fetchNotes( ){
       var notesBox = Hive.box<NoteModel>(kNotesBox);
         notes = notesBox.values.toList();  //getter for data we don't need using try and catch
-
+        emit(ReadNoteSuccess());
 
   }
   }

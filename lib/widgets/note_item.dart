@@ -1,11 +1,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 
 class NoteItem extends StatelessWidget {
-  const NoteItem({super.key});
-
+  const NoteItem({super.key, required this.note});
+  final NoteModel note;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -17,7 +18,7 @@ class NoteItem extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: const Color(0xffffcd7b),
+          color:  Color(note.color),
         ),
         child:  Padding(
           padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
@@ -25,9 +26,9 @@ class NoteItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title:const Text(
-                  " Flutter tips",
-                  style: TextStyle(
+                title: Text(
+                  note.title,
+                  style: const TextStyle(
                     fontSize: 26,
                     color: Colors.black,
                   ),
@@ -35,7 +36,7 @@ class NoteItem extends StatelessWidget {
                 subtitle:  Padding(
                   padding: const EdgeInsets.only(top: 16,bottom: 16),
                   child: Text(
-                    " Build your career with tharwat samy",
+                    note.subTitle,
                     style: TextStyle(
                         fontSize: 18,
                         color: Colors.black.withOpacity(0.5),
@@ -54,7 +55,7 @@ class NoteItem extends StatelessWidget {
                Padding(
                  padding: const EdgeInsets.only(right: 24),
                  child: Text(
-                  " May 21/2020",
+                  note.date,
                   style: TextStyle(
                     fontSize: 16,
                     color: Colors.black.withOpacity(0.4),

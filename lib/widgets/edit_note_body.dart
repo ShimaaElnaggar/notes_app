@@ -1,11 +1,21 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubits/read_note_cubit/read_note_cubit.dart';
+import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
 
-class EditNoteBody extends StatelessWidget {
-  const EditNoteBody({super.key});
+class EditNoteBody extends StatefulWidget {
+  const EditNoteBody({super.key, required this.note});
+final NoteModel note;
 
+  @override
+  State<EditNoteBody> createState() => _EditNoteBodyState();
+}
+
+class _EditNoteBodyState extends State<EditNoteBody> {
+   String ? title,content;
   @override
   Widget build(BuildContext context) {
     return  Padding(
@@ -13,19 +23,31 @@ class EditNoteBody extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 50,),
-          const CustomAppBar(title: 'Edit Note', icon: Icons.check,),
+          CustomAppBar(
+            onPressed: (){
+              widget.note.title = title ?? widget.note.title;
+              widget.note.subTitle = content ?? widget.note.subTitle;
+              widget.note.save();
+              BlocProvider.of<ReadNoteCubit>(context).fetchNotes();
+              Navigator.pop(context);
+            },
+            title: 'Edit Note',
+            icon: Icons.check,),
           const SizedBox(height: 50,),
           CustomTextField(
-            hint: "Title",
-            onSaved: (value ) {
-
+            hint: widget.note.title,
+            onChanged: (value){
+              title = value;
             },
           ),
           const SizedBox(height: 16,),
           CustomTextField(
-            hint: "Content",
+            hint: widget.note.subTitle,
             maxlines: 5,
-            onSaved: (value) {  },),
+            onChanged: (value){
+              content = value;
+            },
+            ),
         ],
       ),
     );

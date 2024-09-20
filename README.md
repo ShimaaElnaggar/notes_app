@@ -3,15 +3,15 @@
 A clean and modern note app that has a simple UI, entirely built with Flutter using cubit.
 This app is also null-safe.
 
-## Complete UI Contains:
+## Complete UI Contains
 
- ► Home Screen (Add note screen) ► Edit note screen
+ ► Home Screen  ► Add note screen ► Edit note screen
 
- ## Note:
+ ## Note
  
 This repository is still under development and I will continue adding more features.
 
-## Features:
+## Features
 
 ###### ◾ View notes in a list. 
 ###### ◾ Add and edit notes.
@@ -20,19 +20,14 @@ This repository is still under development and I will continue adding more featu
 
 ## Screenshots
 <div>
-<img src= " "width="300" height="600">
+<img src= "https://github.com/user-attachments/assets/210661fc-290e-4f66-9e04-81f305e7ab48"width="300" height="600">
+<img src= "https://github.com/user-attachments/assets/3ca7a624-234f-4277-91f2-84523901f3a5"width="300" height="600">
+<img src= "https://github.com/user-attachments/assets/0f6102e1-5067-4f41-9b68-0484f22ec066"width="300" height="600">
+<img src= "https://github.com/user-attachments/assets/ab509fa0-3333-4481-8947-6c5d3d250fec"width="300" height="600">
 </div>
 
-## Videos
+## Upcoming Features
+###### ◾ share notes
+###### ◾ hand-free note-taking (speech-to-text)
+###### ◾ activate Search.
 
-[![Notes]]
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
